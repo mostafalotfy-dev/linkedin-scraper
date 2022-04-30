@@ -24,7 +24,7 @@ $desiredCapabilities->setCapability(ChromeOptions::CAPABILITY, $options);
 $crawler = RemoteWebDriver::create($serverUrl, $desiredCapabilities);
 
 
-login($crawler,"mostafalotfy285@gmail.com","123456789@Gmail.com");
+login($crawler,"email","password");
 
 $crawler->wait()->until(WebDriverExpectedCondition::presenceOfElementLocated(WebDriverBy::cssSelector(".search-global-typeahead__input")));
 $page= 100;
