@@ -6,7 +6,7 @@ use Facebook\WebDriver\WebDriverBy;
 use Facebook\WebDriver\WebDriverExpectedCondition;
 
 /**
- * this script is used to scrape resturants from talabat.com using php-selenuim.
+ * this script is used to scrape compnies from linkedin.com using php-selenuim.
  * the script will go to each page from page index 1 to last page in the web site 
  */
 class Company
