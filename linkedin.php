@@ -20,19 +20,18 @@ $options = new ChromeOptions();
 // $options->addArguments(['-headless']);
 $desiredCapabilities->setCapability(ChromeOptions::CAPABILITY, $options);
 
-
 $crawler = RemoteWebDriver::create($serverUrl, $desiredCapabilities);
 
 
 login($crawler);
-
+// Wait Until the login is finished
 $crawler->wait()->until(WebDriverExpectedCondition::presenceOfElementLocated(WebDriverBy::cssSelector(".search-global-typeahead__input")));
-$page= 100;
+$page= 1;
 
 function paginate()
 {
     global $crawler,$page;
-    $crawler->get("https://www.linkedin.com/search/results/companies/?companyHqGeo=%5B%22106155005%22%5D&companySize=%5B%22B%22%2C%22C%22%2C%22D%22%2C%22E%22%2C%22F%22%5D&origin=FACETED_SEARCH&sid=WQj&page=$page");
+    $crawler->get(getenv("searchResultsUrl")."&page=$page");
     $links = $crawler->findElements(WebDriverBy::cssSelector(".entity-result__title-text.t-16 .app-aware-link"));
     $links = array_map(function($link){
         return $link->getAttribute("href");
@@ -44,7 +43,7 @@ function paginate()
         
     }
 
-    echo $page + 1 ."\n";
+    echo "Page Number".$page + 1 ."\n";
     
     paginate($page++);
 }
