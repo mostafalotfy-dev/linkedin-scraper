@@ -2,7 +2,7 @@
 
 require __DIR__ . "/vendor/autoload.php";
 require __DIR__ . "/src/functions.php";
-use Mostafa\Talabat\Company;
+use Mostafa\Scraper\Company\Company;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
 use Facebook\WebDriver\Chrome\ChromeOptions;
 use Facebook\WebDriver\Remote\DesiredCapabilities;
@@ -24,7 +24,7 @@ $desiredCapabilities->setCapability(ChromeOptions::CAPABILITY, $options);
 $crawler = RemoteWebDriver::create($serverUrl, $desiredCapabilities);
 
 
-login($crawler,"email","password");
+login($crawler);
 
 $crawler->wait()->until(WebDriverExpectedCondition::presenceOfElementLocated(WebDriverBy::cssSelector(".search-global-typeahead__input")));
 $page= 100;

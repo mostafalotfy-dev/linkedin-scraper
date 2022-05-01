@@ -2,7 +2,7 @@
     "name": "mostafa/talabat",
     "autoload": {
         "psr-4": {
-            "Mostafa\\Talabat\\": "src/"
+            "Mostafa\\Scraper\\": "src/"
         }
     },
     "authors": [
@@ -17,6 +17,7 @@
         "symfony/css-selector": "^5.4",
         "php-webdriver/webdriver": "^1.12",
         "ulrichsg/getopt-php": "^4.0",
-        "thiagoalessio/tesseract_ocr": "^2.12"
+        "thiagoalessio/tesseract_ocr": "^2.12",
+        "vlucas/phpdotenv": "^5.4"
     }
 }

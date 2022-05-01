@@ -1,6 +1,6 @@
 <?php
 
-namespace Mostafa\Talabat;
+namespace Mostafa\Scraper\Company;
 
 use Facebook\WebDriver\WebDriverBy;
 use Facebook\WebDriver\WebDriverExpectedCondition;
@@ -45,10 +45,7 @@ class Company
             "image" => $this->getImage(),
             "title" => $this->getTitle(),
             "Description" => $this->getDescription(),
-            "Description / Docation / Followers No." => $this->getType(),
-           
-            
-
+            "Description / Location / Followers No." => $this->getType(),
         ];
         $this->gotoAboutPage();
         $data["Website - Phone Number"] = $this->getWebsite();
