@@ -1,8 +1,8 @@
 {
-    "name": "mostafa/talabat",
+    "name": "mostafa/scraper",
     "autoload": {
         "psr-4": {
-            "Mostafa\\Scraper\\": "src/"
+            "Scraper\\Scraper\\": "src/"
         }
     },
     "authors": [
